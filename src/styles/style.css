@@ -1,0 +1,361 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .burgerButton {
+    width: 44px;
+    height: 44px;
+  }
+  
+  /*
+    AppBar
+  */
+  
+  .app-bar {
+    padding: 8px 16px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .app-bar .app-bar__menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  .app-bar .app-bar__menu button {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .app-bar .app-bar__brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  .app-bar .app-bar__brand h1 {
+    color: #db0000;
+    text-transform: uppercase;
+    font-size: 22px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  
+  .app-bar .app-bar__navigation {
+    position: absolute;
+    top: 50px;
+    left: -180px;
+    width: 150px;
+    transition: all 0.3s;
+    padding: 8px;
+    background-color: white;
+    overflow: hidden;
+  }
+  
+  .app-bar .app-bar__navigation.open {
+    left: 0;
+  }
+  
+  .app-bar .app-bar__navigation ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    padding: 8px;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+  
+  /*
+    Main Content
+  */
+  
+  main {
+    flex: 1;
+  }
+  
+  .content {
+    padding: 32px;
+    margin: 0 auto;
+    min-height: 100%;
+  }
+  
+  .content .content__heading {
+    font-weight: normal;
+  }
+  
+  
+  /*
+    Restaurants
+  */
+  
+  .restaurants {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 32px 0;
+  }
+  
+  
+  /*
+    Resto Item
+  */
+  
+  .restaurant-item {
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .restaurant-item__header {
+    position: relative;
+  }
+  
+  .restaurant-item .restaurant-item__header .restaurant-item__header__poster {
+    width: 100%;
+  }
+  
+  .restaurant-item .restaurant-item__header .restaurant-item__header__rating {
+    position: absolute;
+    padding: 8px;
+    bottom: 20px;
+    left: 0;
+    display: inline-block;
+    background-color: black;
+    color: white;
+  }
+  
+  .restaurant-item .restaurant-item__header .restaurant-item__header__rating .restaurant-item__header__rating__score {
+    margin-left: 10px;
+  }
+  
+  .restaurant-item .restaurant-item__content {
+    padding: 16px;
+  }
+  
+  .restaurant-item .restaurant-item__content h3 {
+    margin: 0 0 10px 0;
+  }
+  
+  .restaurant-item .restaurant-item__content h3 a {
+    color: #db0000;
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 24px;
+  }
+  
+  .restaurant-item .restaurant-item__content p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+  
+  
+  /*
+    restaurant
+  */
+  
+  .restaurant {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px 16px;
+  }
+  
+  .restaurant .restaurant__poster {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .restaurant .restaurant__info h4 {
+    margin: 8px 0;
+  }
+  
+  
+  
+  /*
+    Footer
+  */
+  
+  footer {
+    padding: 16px;
+  }
+  
+  footer p {
+    text-align: center;
+    color: #aaaaaa;
+  }
+  
+  footer p a {
+    color: #db0000;
+    text-decoration: none;
+  }
+  
+  .like {
+    font-size: 18px;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    background-color: #db0000;
+    color: white;
+    border: 0;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress {
+  position: relative;
+  height: 2px;
+  display: block;
+  width: 100%;
+  background-color: white;
+  border-radius: 2px;
+  background-clip: padding-box;
+  /*margin: 0.5rem 0 1rem 0;*/
+overflow: hidden;
+
+ }
+  .progress .indeterminate {
+  background-color:black; }
+  .progress .indeterminate:before {
+  content: '';
+  position: absolute;
+  background-color: #2C67B1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  will-change: left, right;
+  -webkit-animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+  animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite; }
+  .progress .indeterminate:after {
+  content: '';
+  position: absolute;
+  background-color: #2C67B1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  will-change: left, right;
+  -webkit-animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+  animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+  -webkit-animation-delay: 1.15s;
+animation-delay: 1.15s; }
+
+
+ @-webkit-keyframes indeterminate {
+  0% {
+  left: -35%;
+  right: 100%; }
+  60% {
+  left: 100%;
+  right: -90%; }
+  100% {
+  left: 100%;
+  right: -90%; } }
+  @keyframes indeterminate {
+  0% {
+  left: -35%;
+  right: 100%; }
+  60% {
+  left: 100%;
+  right: -90%; }
+  100% {
+  left: 100%;
+  right: -90%; } }
+  @-webkit-keyframes indeterminate-short {
+  0% {
+  left: -200%;
+  right: 100%; }
+  60% {
+  left: 107%;
+  right: -8%; }
+  100% {
+  left: 107%;
+  right: -8%; } }
+  @keyframes indeterminate-short {
+  0% {
+  left: -200%;
+  right: 100%; }
+  60% {
+  left: 107%;
+  right: -8%; }
+  100% {
+  left: 107%;
+  right: -8%; } }
+
+  .hero-image { 
+    height: 550px;
+    -webkit-filter: brightness(40%);
+            filter: brightness(40%);
+    width: 100%;
+    z-index: -999;
+    max-width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+
+  .jumbotron {
+    position: relative;
+}
+
+.jumbotron-text {
+    position: relative;
+    color: white;
+    padding-top: 120px;
+}
+
+.jumbotron-heading {
+    position: relative;
+}
+
+.jumbotron-paragraph { 
+    font-size: 20px;
+    margin: 80px;
+}
+
+#skipButton {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: #bf1722;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+#skipButton:focus {
+  top: 0;
+}
+
+.ul-navbar li a{
+  height: 30px;
+}
